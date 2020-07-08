@@ -1,0 +1,39 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "react-app",
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint",
+        "prettier/babel",
+        "prettier/react"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "import",
+        "jsx-a11y",
+        "prettier",
+        "react",
+        "react-hooks"
+    ],
+    "rules": {
+        "no-use-before-define": "off",
+        "prettier/prettier": "error",
+        "no-restricted-imports": [
+            "error",
+            {
+                "paths": [
+                    {
+                        "name": "@material-ui/core",
+                        "importNames": ["makeStyles"],
+                        "message": "Please import makeStyles from @material-ui/core/styles instead. See https://material-ui.com/guides/minimizing-bundle-size/#option-2 for more information"
+                    },
+                    {
+                        "name": "@material-ui/core",
+                        "importNames": ["createMuiTheme"],
+                        "message": "Please import createMuiTheme from @material-ui/core/styles instead. See https://material-ui.com/guides/minimizing-bundle-size/#option-2 for more information"
+                    }
+                ]
+            }
+        ]
+    }
+}
